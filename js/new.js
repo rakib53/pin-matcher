@@ -30,6 +30,10 @@ for (const button of buttons) {
 
           if (isNaN(finout)) {
                noPin.style.display = "block";
+
+               setTimeout(() => {
+                    noPin.style.display = "none";
+               }, 1000);
                return;
           } else {
                if (targetValue === "C") {
@@ -54,7 +58,6 @@ verifyPin.addEventListener("click", () => {
      const displayPin = setInputValue("display-pin");
      const pinSuccess = document.getElementById("pin-success");
      const pinWrong = document.getElementById("pin-failure");
-     typedNumber.value = "";
 
      if (attemptLeft <= 0) {
           verifyPin.disable = "true";
@@ -78,7 +81,6 @@ verifyPin.addEventListener("click", () => {
                attemptLeft--;
           }
      }
-
      attempt.innerText = attemptLeft;
 });
 
